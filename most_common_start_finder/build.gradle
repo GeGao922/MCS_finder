@@ -1,0 +1,23 @@
+apply plugin: 'java'
+
+description = "a simple program for analysising downloaded text"
+
+java {
+  toolchain {
+    languageVersion.set(JavaLanguageVersion.of(17))
+  }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation group: 'junit', name: 'junit', version:'4.12'
+}
+
+test {
+    testLogging {
+        events "PASSED", "FAILED", "SKIPPED"
+    }
+}
